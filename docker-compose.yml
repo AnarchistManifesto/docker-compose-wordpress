@@ -6,8 +6,8 @@ services:
     restart: always
     volumes:
       - wordpress-data:/var/www/html/:ro
-      - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
-      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - /nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
+      - /nginx/conf.d:/etc/nginx/conf.d:ro
     ports:
       - 80:80
       - 443:443
@@ -19,7 +19,7 @@ services:
     restart: always
     volumes:
       - wordpress-data:/var/www/html
-      - ./php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - /php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     environment:
       - WORDPRESS_DB_NAME=wpdb
       - WORDPRESS_TABLE_PREFIX=wp_
