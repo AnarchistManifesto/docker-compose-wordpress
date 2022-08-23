@@ -38,11 +38,3 @@ services:
       - MYSQL_ROOT_PASSWORD=password
     networks:
       - back
-volumes:
-  wordpress-data:
-    driver: local
-  wordpress-db-data:
-    driver: local
-networks:
-  front:
-  back:
